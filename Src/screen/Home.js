@@ -10,7 +10,9 @@ import {
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {IMAGES} from '../assets';
+import { useNavigation } from '@react-navigation/native';
 const Home = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <ImageBackground source={IMAGES.MOUNTAIN} style={styles.img}>
@@ -23,7 +25,9 @@ const Home = () => {
             grateful keep the feel parents.
           </Text>
         </View>
-        <TouchableOpacity style={styles.bottom}>
+        <TouchableOpacity style={styles.bottom}  onPress={() =>
+                navigation.navigate('DetailScreen')
+              }>
 <Text style={styles.bottomtext}>Get Started</Text>
         </TouchableOpacity>
       </ImageBackground>
